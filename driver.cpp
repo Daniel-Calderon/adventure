@@ -1,6 +1,6 @@
 // Raquel FIgueroa
 // Ali Fenton
-//David jia
+// David Jia
 
 char menu( );
 double  climbing(... );
