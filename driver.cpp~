@@ -1,13 +1,9 @@
 // Raquel Figueroa
 // Ali Fenton
 // David Jia
-<<<<<<< HEAD
-// Daniel Calderon
-=======
 #include<iostream> // input output
 #include<string> // string
 using namespace std;
->>>>>>> d782cece1320fd2056f4059036f7352168836970
 
 char menu( );
 double climbing();
@@ -18,6 +14,8 @@ double discount(double baseChange); // gives discounted price
 
 int main()
 {
+	cout << climbing() << endl;	
+	
     return 0;
 }
 
