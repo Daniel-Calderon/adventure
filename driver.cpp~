@@ -14,6 +14,8 @@ double discount(double baseChange); // gives discounted price
 
 int main()
 {
+	cout << climbing() << endl;	
+	
     return 0;
 }
 
