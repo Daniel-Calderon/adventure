@@ -1,4 +1,4 @@
-// Raquel FIgueroa
+// Raquel Figueroa
 // Ali Fenton
 // David Jia
 
