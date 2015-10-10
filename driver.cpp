@@ -8,42 +8,29 @@
 #include <cctype>
 #include <cassert>
 
-
-
-
-double scuba(int peopleTotal, int totalDays);
-
+double scuba();
 double discount(double baseChange);
-
-
 char menu();
 double  climbing( );
-double scuba(int peopleTotal, int totalDays);
 double skyDive();
 double spelunk();
-double discount(double baseChange); // gives discounted price
 
 using namespace std;
 
 int main()
 {
     
-    if(menu() == 'a')
-    {
-    cout << climbing()<<endl;
-    }
-//    else if(menu() =='b')
-//    {
-//    scuba();
-//    }
-    else if(menu() =='c')
-    {
-    cout << skyDive()<<endl;
-    }
-    else if(menu() =='d')
-    {
-    cout << spelunk() << endl;
-    }
+   
+  switch(menu()){
+    case 'a': cout << climbing()<<endl;
+    break;
+    case 'b': cout << scuba()<<endl;
+    break;
+    case 'c':cout << skyDive()<<endl;
+    break;
+    case'd':cout << spelunk()<<endl;
+    break;
+  }
 
     return 0;
 }
@@ -195,10 +182,17 @@ double discount(double baseCharge){
 }
 
 
-double scuba(int peopleTotal, int totalDays){
+double scuba(){
+    int peopleTotal,totalDays;
     int baseCharge = 1000;
     int scubaInstruc = 100; 
     int totalOfScuba;
+    
+    cout << "Enter the amount of people are coming." << endl;
+    cin >> peopleTotal;
+    
+    cout << "How many days are you staying?" << endl;
+    cin >> totalDays;
     
     if(peopleTotal >= 5){
         baseCharge = discount(baseCharge);
