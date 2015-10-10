@@ -1,26 +1,24 @@
 // Raquel Figueroa
 // Ali Fenton
 // David Jia
-<<<<<<< HEAD
 // Daniel Calderon
-=======
+
 #include<iostream> // input output
 #include<string> // string
-using namespace std;
->>>>>>> d782cece1320fd2056f4059036f7352168836970
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-char menu( );
-double climbing();
-=======
-#include <iostream>
 #include <cctype>
+#include <cassert>
+
+
+
+
+double scuba(int peopleTotal, int totalDays);
+
+double discount(double baseChange);
+
 
 char menu();
-double  climbing(... );
->>>>>>> 228ace49b1181bf69a61ee2eb0d9ab306831f40c
-double scuba(... );
+double  climbing( );
+double scuba(int peopleTotal, int totalDays);
 double skyDive();
 double spelunk();
 double discount(double baseChange); // gives discounted price
@@ -29,12 +27,24 @@ using namespace std;
 
 int main()
 {
-<<<<<<< HEAD
-	cout << skyDive() << endl;
+    
+    if(menu() == 'a')
+    {
+    cout << climbing()<<endl;
+    }
+//    else if(menu() =='b')
+//    {
+//    scuba();
+//    }
+    else if(menu() =='c')
+    {
+    cout << skyDive()<<endl;
+    }
+    else if(menu() =='d')
+    {
+    cout << spelunk() << endl;
+    }
 
-=======
-    cout << spelunk();
->>>>>>> 228ace49b1181bf69a61ee2eb0d9ab306831f40c
     return 0;
 }
 char menu()
@@ -96,10 +106,10 @@ double spelunk()
     return totalCost;
 }
 
-double discount(double baseChange)
-{
-	return (baseChange * 0.9);
-}
+//double discount(double baseChange)
+//{
+//	return (baseChange * 0.9);
+//}
 
 double climbing()
 {
@@ -175,24 +185,10 @@ double climbing()
 	totalCharge = baseCharge + instructionCharge + rentalCharge;
 	
 	return totalCharge;
-=======
-#include <iostream>
-#include <string>
-#include <cassert>
-using namespace std;
-
-char menu();
-//double  climbing(... );
-double scuba(int peopleTotal, int totalDays);
-//double skyDive(... );
-//double spelunk();
-double discount(double baseChange);
-
-int main(){
-
-    
-    return 0;
 }
+
+
+
 
 double discount(double baseCharge){
     return(baseCharge * 0.9);
@@ -218,7 +214,7 @@ double scuba(int peopleTotal, int totalDays){
     
     return totalOfScuba;
 
->>>>>>> 573036ba52bf2373247933472580b77d0b34afba
+
 }
 
 double skyDive()
