@@ -1,52 +1,115 @@
 // Raquel Figueroa
 // Ali Fenton
 // David Jia
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+// Daniel Calderon
 
-char menu( );
-=======
-
-#include <iostream>
-#include <cctype>
-
-char menu();
->>>>>>> 228ace49b1181bf69a61ee2eb0d9ab306831f40c
-double  climbing(... );
-double scuba(... );
-double skyDive(... );
-double spelunk();
-
-<<<<<<< HEAD
-int main()
-{
-    return 0;
-}
-
-=======
 #include<iostream> // input output
 #include<string> // string
-using namespace std;
+#include <cctype>
+#include <cassert>
 
-char menu( );
-double climbing();
-double scuba(... );
+
+
+
+double scuba(int peopleTotal, int totalDays);
+
+double discount(double baseChange);
+
+
+char menu();
+double  climbing( );
+double scuba(int peopleTotal, int totalDays);
 double skyDive();
 double spelunk();
 double discount(double baseChange); // gives discounted price
 
+using namespace std;
+
 int main()
 {
-	cout << skyDive() << endl;
+    
+    if(menu() == 'a')
+    {
+    cout << climbing()<<endl;
+    }
+//    else if(menu() =='b')
+//    {
+//    scuba();
+//    }
+    else if(menu() =='c')
+    {
+    cout << skyDive()<<endl;
+    }
+    else if(menu() =='d')
+    {
+    cout << spelunk() << endl;
+    }
 
     return 0;
 }
-
-double discount(double baseChange)
+char menu()
 {
-	return (baseChange * 0.9);
+    char ans;
+    
+     cout << "\n"
+          << "**Welcome to High Adventure Travel Agency**\n"
+          << "       We offer 4 vacation packages:\n"
+          << "         A. Devil's Courthouse Adventure Weekend.\n"
+          << "         B. Scuba Bahama.\n"
+          << "         C. Sky Dive Colorado.\n"
+          << "         D. Barron Cliff Spelunk.\n"
+          << "\n"
+          << "Please enter your preferred vacation package: ";
+         
+          cin >> ans;
+          ans = tolower(ans);
+             
+          while (ans != 'a' && ans != 'b' && ans != 'c' && ans != 'd')
+          {
+            cout << "\n"
+                 << "Invalid input. Please choose A, B, C, or D: ";
+            cin >> ans;
+            ans = tolower(ans);
+          }
+    return ans;
 }
+
+double spelunk()
+{
+    int numPeople(0), numEquipRental(0), numDays(0);
+    double totalBaseCharge(0), totalEquipRental(0), totalCost(0);
+    double costBaseCharge(700), costEquipRental(40), discount(0.9);
+    
+    cout << "You have chosen the Barron Cliff Spelunk Vacation Package!"
+         << "\n"
+         << "Enter number of people: "; 
+    cin >> numPeople;
+    
+    cout << "Enter the number of people renting equipment: ";
+    cin >> numEquipRental;
+    
+    cout << "Enter number of days you will need the equipment: ";
+    cin >> numDays;
+    
+    totalBaseCharge = costBaseCharge * numPeople;
+    totalEquipRental = costEquipRental * numDays * numEquipRental;
+    
+    if (numPeople >= 5)
+        totalBaseCharge = totalBaseCharge * discount;
+    
+    totalCost = totalBaseCharge + totalEquipRental;
+    
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+    
+    return totalCost;
+}
+
+//double discount(double baseChange)
+//{
+//	return (baseChange * 0.9);
+//}
 
 double climbing()
 {
@@ -123,27 +186,9 @@ double climbing()
 	
 	return totalCharge;
 }
-<<<<<<< HEAD
->>>>>>> David-Jia-master
-=======
 
-#include <iostream>
-#include <string>
-#include <cassert>
-using namespace std;
 
-char menu();
-//double  climbing(... );
-double scuba(int peopleTotal, int totalDays);
-//double skyDive(... );
-//double spelunk();
-double discount(double baseChange);
 
-int main(){
-
-    
-    return 0;
-}
 
 double discount(double baseCharge){
     return(baseCharge * 0.9);
@@ -169,9 +214,8 @@ double scuba(int peopleTotal, int totalDays){
     
     return totalOfScuba;
 
+
 }
->>>>>>> 573036ba52bf2373247933472580b77d0b34afba
-=======
 
 double skyDive()
 {
@@ -199,7 +243,7 @@ double skyDive()
 	cout << "How many people would like to stay at the Wilderness Lodge?" << endl;
 	cin >> numLodge;
 	
-	while (numLodge < 1) // checks for invalid input
+	while (numLodge < 0) // checks for invalid input
 	{
 		cout << "Please enter a valid number of people staying or zero if you wish to cancel."
 			 << endl;
@@ -261,72 +305,3 @@ double skyDive()
 	
 	return totalCharge;
 }
->>>>>>> David-Jia-master
-=======
-using namespace std;
-
-int main()
-{
-    cout << spelunk();
-    return 0;
-}
-char menu()
-{
-    char ans;
-    
-     cout << "\n"
-          << "**Welcome to High Adventure Travel Agency**\n"
-          << "       We offer 4 vacation packages:\n"
-          << "         A. Devil's Courthouse Adventure Weekend.\n"
-          << "         B. Scuba Bahama.\n"
-          << "         C. Sky Dive Colorado.\n"
-          << "         D. Barron Cliff Spelunk.\n"
-          << "\n"
-          << "Please enter your preferred vacation package: ";
-         
-          cin >> ans;
-          ans = tolower(ans);
-             
-          while (ans != 'a' && ans != 'b' && ans != 'c' && ans != 'd')
-          {
-            cout << "\n"
-                 << "Invalid input. Please choose A, B, C, or D: ";
-            cin >> ans;
-            ans = tolower(ans);
-          }
-    return ans;
-}
-
-double spelunk()
-{
-    int numPeople(0), numEquipRental(0), numDays(0);
-    double totalBaseCharge(0), totalEquipRental(0), totalCost(0);
-    double costBaseCharge(700), costEquipRental(40), discount(0.9);
-    
-    cout << "You have chosen the Barron Cliff Spelunk Vacation Package!"
-         << "\n"
-         << "Enter number of people: "; 
-    cin >> numPeople;
-    
-    cout << "Enter the number of people renting equipment: ";
-    cin >> numEquipRental;
-    
-    cout << "Enter number of days you will need the equipment: ";
-    cin >> numDays;
-    
-    totalBaseCharge = costBaseCharge * numPeople;
-    totalEquipRental = costEquipRental * numDays * numPeople;
-    
-    if (numPeople >= 5)
-        totalBaseCharge = totalBaseCharge * discount;
-    
-    totalCost = totalBaseCharge + totalEquipRental;
-    
-    cout.setf(ios::fixed);
-    cout.setf(ios::showpoint);
-    cout.precision(2);
-    
-    return totalCost;
-}
-
->>>>>>> 228ace49b1181bf69a61ee2eb0d9ab306831f40c
