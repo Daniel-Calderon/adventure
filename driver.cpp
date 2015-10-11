@@ -1,10 +1,12 @@
-// Raquel Figueroa
-// Ali Fenton
-// David Jia
-// Daniel Calderon
+// Name: Raquel Figueroa
+// Name: Ali Fenton
+// Name: David Jia
+// Name: Daniel Calderon
+// Date: 10/12/2015
+// Determines the type of vaction plus price.
 
-#include<iostream> // input output
-#include<string> // string
+#include<iostream> 
+#include<string> 
 #include <cctype>
 #include <cassert>
 
@@ -19,9 +21,7 @@ using namespace std;
 
 int main()
 {
-    
-   
-  switch(menu()){
+    switch(menu()){
     case 'a': cout << climbing()<<endl;
     break;
     case 'b': cout << scuba()<<endl;
@@ -34,6 +34,7 @@ int main()
 
     return 0;
 }
+//************************************************************************************
 char menu()
 {
     char ans;
@@ -60,6 +61,7 @@ char menu()
           }
     return ans;
 }
+//*********************************************************************************************************
 
 double spelunk()
 {
@@ -92,11 +94,7 @@ double spelunk()
     
     return totalCost;
 }
-
-//double discount(double baseChange)
-//{
-//	return (baseChange * 0.9);
-//}
+//********************************************************************************************************************************
 
 double climbing()
 {
@@ -173,15 +171,11 @@ double climbing()
 	
 	return totalCharge;
 }
-
-
-
-
+//**************************************************************************************************************************
 double discount(double baseCharge){
     return(baseCharge * 0.9);
 }
-
-
+//***************************************************************************************************************************
 double scuba(){
     int peopleTotal,totalDays;
     int baseCharge = 1000;
@@ -210,7 +204,7 @@ double scuba(){
 
 
 }
-
+//*********************************************************************************************************************************
 double skyDive()
 {
 	int numPeople, numLodge, numLodgeDays, numInn, numInnDays;
